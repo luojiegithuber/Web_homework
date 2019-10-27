@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>居中的盒子</title>
+
+<script>
+
+var size=24;/*全局变量*/
+
+function big(x){
+  size=size+1;
+  x.style.fontSize=size+"px";
+}
+function small(x){
+  size=size-1;
+  x.style.fontSize=size+"px";
+}
+</script>
+
+
+<style>
+body{
+	text-align: center;
+}
+
+.css_text{/*对字体的要求*/
+	font-size: 24px;
+	font-style: italic;
+	font-family:"微软雅黑";
+}
+
+
+
+#web{
+	text-align: center;/* 文字水平居中*/
+	line-height: 100px;/* 行距设为与div高度一致*/
+
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+    width: 400px;
+    height: 100px;
+    border: 1px solid black;
+
+    padding: 25px;
+    
+    font-size: 24px;
+	font-style: italic;
+	font-family:"微软雅黑";
+
+}
+
+
+</style>
+</head>
+<body>
+
+
+<div id="web" >Web技术
+ <div >
+   <button onclick="big(document.getElementById('web'))">变大</button>
+   <button onclick="small(document.getElementById('web'))">变小</button>
+ </div>
+
+</div>
+
+
+
+
+</body>
+</html>

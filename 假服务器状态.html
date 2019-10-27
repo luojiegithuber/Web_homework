@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>服务器实时状态</title>
+
+<script>
+var tempid="";
+
+function display_name(x){
+  document.getElementById("server_name").innerHTML = x.id;
+}
+function no_display(x){
+  document.getElementById("server_name").innerHTML = " ";
+}
+function send(x){
+  tempid=x.id;
+  document.getElementById("test").innerHTML = tempid;
+}
+
+function open_s(x){
+  
+  document.getElementById(tempid).style.backgroundColor = "green";
+}
+function close_s(x){
+  
+  document.getElementById(tempid).style.background = "red";
+}
+</script>
+
+
+<style>
+body{
+	text-align: center;
+}
+
+.State_0{
+  width: 70px;   
+  height: 70px;    
+  background-color:red;   
+  border-radius: 50%;    
+  -moz-border-radius: 50%;  
+  -webkit-border-radius: 50%;
+  margin: 20px;
+  float:left;
+}
+
+.State_1{
+  width: 70px;   
+  height: 70px;    
+  background-color:green;   
+  border-radius: 50%;    
+  -moz-border-radius: 50%;  
+  -webkit-border-radius: 50%;
+  margin: 20px;
+  float:left;
+}
+
+
+
+
+.text{
+  font-size: 24px;
+  font-family:"微软雅黑";
+  background-color:rgb(152,152,152);
+  text-align:left;
+}
+
+
+#web{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+    width: 800px;
+    height: 400px;
+    border: 1px solid black;
+}
+
+
+</style>
+</head>
+<body>
+
+
+<div id="web" onmouseout="no_display(this)">
+  <div class="text">
+    服务器实时状态
+  </div >
+
+
+  <div class="State_1" onmousemove="display_name(this)" onclick="send(this)" id="01"></div>
+  <div class="State_0" onmousemove="display_name(this)" onclick="send(this)" id="02"></div>
+  <div class="State_0" onmousemove="display_name(this)" onclick="send(this)" id="03"></div>
+  <div class="State_0" onmousemove="display_name(this)" onclick="send(this)" id="04"></div>
+  <div class="State_1" onmousemove="display_name(this)" onclick="send(this)" id="05"></div>
+  <div class="State_1" onmousemove="display_name(this)" onclick="send(this)" id="06"></div>
+  <div class="State_1" onmousemove="display_name(this)" onclick="send(this)" id="07"></div>
+  <div class="State_0" onmousemove="display_name(this)" onclick="send(this)" id="08"></div>
+  <div class="State_0" onmousemove="display_name(this)" onclick="send(this)" id="09"></div>
+  <div class="State_0" onmousemove="display_name(this)" onclick="send(this)" id="10"></div>
+  <div class="State_1" onmousemove="display_name(this)" onclick="send(this)" id="11"></div>
+  <div class="State_1" onmousemove="display_name(this)" onclick="send(this)" id="12"></div>
+  <div class="State_0" onmousemove="display_name(this)" onclick="send(this)" id="13"></div>
+  <div class="State_0" onmousemove="display_name(this)" onclick="send(this)" id="14"></div>
+  <div class="State_1" onmousemove="display_name(this)" onclick="send(this)" id="15"></div>
+  <div class="State_0" onmousemove="display_name(this)" onclick="send(this)" id="16"></div>
+  <div class="State_0" onmousemove="display_name(this)" onclick="send(this)" id="17"></div>
+  <div class="State_1" onmousemove="display_name(this)" onclick="send(this)" id="18"></div>
+  <div class="State_0" onmousemove="display_name(this)" onclick="send(this)" id="19"></div>
+  <div class="State_1" onmousemove="display_name(this)" onclick="send(this)" id="20"></div>
+  <div class="State_0" onmousemove="display_name(this)" onclick="send(this)" id="最后的一个"></div>
+
+</div>
+
+  <div style="font-size:25px; position: relative; bottom: -650px;">
+  服务器名称:
+  <textarea  id="server_name" rows="1" cols="10" readonly style="resize:none;font-size: 25px"></textarea>
+</div>
+
+  <div style="font-size:15px; position: relative; bottom: -700px;">
+  服务器:
+  <p id="test"></p>
+
+<button onclick="open_s()" >开启</button>
+<button onclick="close_s()" >关闭</button>
+
+</div>
+
+</body>
+</html>
